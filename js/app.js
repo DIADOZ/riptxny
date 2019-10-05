@@ -11,7 +11,7 @@ function init() {
   container = document.querySelector("#scene-container");
 
   scene = new THREE.Scene();
-  scene.background = new THREE.Color('#F00');
+  scene.background = new THREE.Color("#F00");
 
   createCamera();
   createControls();
@@ -20,6 +20,7 @@ function init() {
   createRenderer();
 
   renderer.setAnimationLoop(() => {
+    controls.update();
     update();
     render();
   });
@@ -37,6 +38,12 @@ function createCamera() {
 
 function createControls() {
   controls = new THREE.OrbitControls(camera, container);
+  controls.autoRotate = true;
+  controls.autoRotateSpeed = 0.7;
+  controls.enableZoom = false;
+  controls.enableKeys = false;
+  controls.enablePan = false;
+  controls.maxPolarAngle = 1.6;
 }
 
 function createLights() {

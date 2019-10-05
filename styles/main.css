@@ -4,6 +4,9 @@ body {
   color: white;
   text-align: center;
   background-color: black;
+
+  font-size: 10px;
+  font-family: "Space Mono", monospace;
 }
 
 h1 {
@@ -23,28 +26,32 @@ a {
   position: absolute;
   color: white;
   z-index: 1;
+  text-decoration: none;
+  text-transform: lowercase;
+
+  font-size: 1.5em;
 }
 
-a:hover{
+a:hover {
   color: purple;
 }
 
 #top-left {
-  top: 5px;
-  left: 5px;
+  top: 20px;
+  left: 25px;
 }
 
 #top-right {
-  top: 5px;
-  right: 5px;
+  top: 20px;
+  right: 25px;
 }
 
 #bottom-left {
-  bottom: 5px;
-  left: 5px;
+  bottom: 20px;
+  left: 25px;
 }
 
 #bottom-right {
-  bottom: 5px;
-  right: 5px;
+  bottom: 20px;
+  right: 25px;
 }
