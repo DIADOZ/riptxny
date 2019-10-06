@@ -1,17 +1,22 @@
 body {background-color: #131d1c;}
 
-.video-containter {
-    position:relative;
-	padding-bottom:75%;
-	padding-top:30px;
-	height:0;
-	overflow:hidden;
+h1 {font-family: 'My Webfont';color: #f4c748; font-size:30px}
+
+h1.title-center {text-align: center}
+
+iframe#txny-youtube {
+    width:100%;
+    height: 66%;
+
 }
-#txny-youtube {
-    position:absolute;
-	top:0;
-	left:0;
-	width:100%;
-	height:100%;
+
+div.body {
+    padding-right: 50px;
+    padding-left: 50px;
 }
 p {color: #f4c748}
+
+@font-face {
+    font-family: 'My Webfont';
+    src: url('airstrikeplat.ttf') format('truetype')
+}
