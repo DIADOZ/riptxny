@@ -1,20 +1,45 @@
-body {background-color: #131d1c;}
+body {
+    background-color: #131d1c;}
 
-h1 {font-family: 'My Webfont';color: #f4c748; font-size:30px}
+h1 {
+    font-family: 'My Webfont';
+    color: #f4c748;
+    font-size:500%
+}
 
-h1.title-center {text-align: center}
+
+p {
+    font-family: Noto Sans, sans-serif;
+    font-size: 15px;
+    line-height: 1.58;
+}
+
+h1.title-center {
+    text-align: center
+}
+
+div.video-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56%;
+}
 
 iframe#txny-youtube {
-    width:100%;
-    height: 66%;
-
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
 }
 
 div.body {
     padding-right: 50px;
     padding-left: 50px;
 }
-p {color: #f4c748}
+p {
+    color: #f4c748
+}
 
 @font-face {
     font-family: 'My Webfont';
