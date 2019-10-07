@@ -7,11 +7,17 @@ h1 {
     font-size:500%
 }
 
+h2 {
+    /* font-family: 'My Webfont'; */
+    color: #f4c748;
+    font-size: 1.5em;
+}
 
-p {
+
+p,ul,li {
     font-family: Noto Sans, sans-serif;
-    font-size: 15px;
-    line-height: 1.58;
+    font-size: 21px;
+    line-height: 1.6;
 }
 
 h1.title-center {
@@ -34,10 +40,10 @@ iframe#txny-youtube {
 }
 
 div.body {
-    padding-right: 50px;
-    padding-left: 50px;
+    padding-right: 10px;
+    padding-left: 10px;
 }
-p {
+p,ul,li {
     color: #f4c748
 }
 
