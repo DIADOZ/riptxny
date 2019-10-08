@@ -1,19 +1,12 @@
 body {
   margin: 0px;
   overflow: hidden;
-  color: white;
+  color: #f4c748;
   text-align: center;
-  background-color: black;
+  background-color: #131d1c;
   
   font-size: 10px;
   font-family: "Space Mono", monospace;
-}
-
-h1 {
-  position: absolute;
-  width: 100%;
-  z-index: 1;
-  font-size: 1.5rem;
 }
 
 #scene-container {
@@ -24,7 +17,7 @@ h1 {
 
 a {
   position: absolute;
-  color: white;
+  color: #f4c748;
   z-index: 1;
   text-decoration: none;
   text-transform: lowercase;
@@ -33,7 +26,7 @@ a {
 }
 
 a:hover {
-  color: purple;
+  color: #1b352f;
 }
 
 #top-left {
@@ -47,14 +40,15 @@ a:hover {
 }
 
 #top-center {
-  top: 20px;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
 }
+
 .logo {
-  padding: 21;
-  width: 10px;
-  height: 10px;
-  display: block;
-  margin: auto;
+  fill: #f4c748;
+  width: 3em;
 }
 
 #bottom-left {
