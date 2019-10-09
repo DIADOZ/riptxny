@@ -1,4 +1,14 @@
-.social-tile{
+div.social-tile{
     width: 50vw;
+    height: 10vw;
     color: white;
+    position: relative;
+    background-color: black;
+    margin: 0 auto;
+}
+
+div.social-container {
+    margin:0 auto;
+    background-color: bisque;
+    top: 50%;
 }
