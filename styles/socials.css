@@ -10,5 +10,16 @@ div.social-tile{
 div.social-container {
     margin:0 auto;
     background-color: bisque;
+    /* this is to center hor. and vert. */
+    position: absolute;
     top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.social-link{
+    top: 50%;
+    display: block;
+    position: relative;
+    vertical-align: middle;
 }
