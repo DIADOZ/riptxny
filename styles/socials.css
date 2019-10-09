@@ -9,7 +9,7 @@ div.social-tile{
 
 div.social-container {
     margin:0 auto;
-    background-color: bisque;
+    /* background-color: bisque; */
     /* this is to center hor. and vert. */
     position: absolute;
     top: 50%;
@@ -22,4 +22,5 @@ div.social-container {
     display: block;
     position: relative;
     vertical-align: middle;
+    margin-bottom: 40px;
 }
