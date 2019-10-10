@@ -117,6 +117,10 @@ function onWindowResize() {
   renderer.setSize(container.clientWidth, container.clientHeight);
 }
 
+window.addEventListener("load", () => {
+  document.querySelector("body").classList.add("loaded"); 
+});
+
 window.addEventListener("resize", onWindowResize);
 
 init();
