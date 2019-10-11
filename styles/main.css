@@ -11,49 +11,48 @@ body {
   color: var(--sandy-yellow);
   text-align: center;
   background-color: var(--slate-gray);
-  
+
   font-size: 17px;
   font-family: "Space Mono", monospace;
 }
 
-#scene-container {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-
-a {
+a.nav {
   position: fixed;
   color: inherit;
   z-index: 1;
   text-decoration: none;
   text-transform: lowercase;
-  
-  font-size: 1em;
-  padding: 25px 26px;
-  letter-spacing: .10em;
-}
 
-a.link {
+  font-size: 1em;
+  margin: 25px 26px;
+  letter-spacing: 0.1em;
+
   opacity: 0;
 }
 
-a:hover {
+a.nav:hover {
   color: var(--slate-green);
 }
 
 #logo {
   opacity: 0;
-  top: 0px;
-  left: 50%;
-  margin: -5px;
-  transform: translate(-50%, -40%);
-  -webkit-transform: translate(-50%, -40%);
+  margin: 20px 0px;
+  width: 2.5em;
 }
 
-.logo {
+#logo > svg {
   fill: var(--sandy-yellow);
-  width: 2.5em;
+}
+
+#logo > svg:hover {
+  fill: var(--slate-green);
+}
+
+.top-center {
+  top: 0px;
+  left: 50%;
+  transform: translate(-50%, -40%);
+  -webkit-transform: translate(-50%, -40%);
 }
 
 .top-left {
@@ -84,12 +83,12 @@ a:hover {
   -webkit-transform: translate(55px, 50px);
 }
 
-.loaded > a.link {
-  animation: easeLinks .8s ease .3s forwards;
+.loaded > a.nav {
+  animation: easeLinks 0.8s ease 0.3s forwards;
 }
 
 .loaded > #logo {
-  animation: easeLogo 1s ease .3s forwards;
+  animation: easeLogo 1s ease 0.3s forwards;
 }
 
 @keyframes easeLogo {
@@ -107,14 +106,25 @@ a:hover {
 }
 
 @media (max-width: 890px) {
-  a {
-    padding: 21px 22px;
+  a.nav {
+    margin: 21px 22px;
   }
 }
 
 @media (max-width: 500px) {
-  a {
-    padding: 11px 12px;
+  a.nav {
+    margin: 11px 12px;
   }
 }
 
+/* main page specific */
+#scene-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+/* main page specific */
+
+/* music page specific */
+
+/* music page specific */
