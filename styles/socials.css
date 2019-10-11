@@ -1,26 +1,32 @@
-div.social-tile{
+/* div.social-tile{
     width: 50vw;
     height: 10vw;
     color: white;
     position: relative;
     background-color: black;
     margin: 0 auto;
-}
+} */
 
 div.social-container {
-    margin:0 auto;
-    /* background-color: bisque; */
-    /* this is to center hor. and vert. */
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  margin: 0 auto;
+  /* background-color: bisque; */
+  /* this is to center hor. and vert. */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
 }
 
-.social-link{
-    top: 50%;
-    display: block;
-    position: relative;
-    vertical-align: middle;
-    margin-bottom: 40px;
+.social-link {
+  display: block;
+  margin-bottom: 40px;
+  color: inherit;
+  text-decoration: none;
+  text-transform: lowercase;
+
+  font-size: 1em;
+  margin: 25px 26px;
+  letter-spacing: 0.3em;
+  line-height: 20px;
 }
