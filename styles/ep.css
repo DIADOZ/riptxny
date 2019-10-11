@@ -1,13 +1,38 @@
-img.cover {
-    width: 100%;
+.cover-container {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%);
 }
 
-div.cover-container{
-margin:0 auto;
-/* background-color: bisque; */
-/* this is to center hor. and vert. */
-position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
+.cover {
+  height: 30vh;
+}
+
+@media (max-width: 890px) {
+  .cover-container {
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .cover {
+    height: 40vh;
+  }
+}
+
+@media (max-width: 500px) {
+  .cover-container {
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .cover {
+    height: 40vh;
+  }
+}
+
+@media (orientation: landscape) {
+  .cover {
+    height: 60vh;
+  }
 }
