@@ -29,6 +29,7 @@ div.video-container {
     width: 100%;
     height: 0;
     padding-bottom: 56%;
+    z-index: 1;
 }
 
 iframe#txny-youtube {
@@ -39,10 +40,33 @@ iframe#txny-youtube {
     top: 0;
 }
 
-div.body {
-    padding-right: 10px;
-    padding-left: 10px;
+.body:before {
+    text-align: justify;
+    content: "";
+    width: 100%;
+    height: 65px;
+    position: fixed;
+    top: 0px;
+    background: -moz-linear-gradient(bottom, #131d1c00 0%, #131d1c 35%, #131d1c 70%, #131d1c 100%);
+    background: linear-gradient(bottom, #131d1c  0%, #131d1c 35%, #131d1c 70%, #131d1c 100%);
 }
+
+.body:after {
+    text-align: justify;
+    content: "";
+    width: 100%;
+    height: 65px;
+    position: fixed;
+    bottom: 0px;
+    background: -moz-linear-gradient(top, #131d1c00 0%, #131d1c 35%, #131d1c 70%, #131d1c 100%);
+    background: linear-gradient(top, #131d1c  0%, #131d1c 35%, #131d1c 70%, #131d1c 100%);
+}
+
+.body-text {
+    margin: 10px 120px;
+    padding-bottom: 40px;
+}
+
 p,ul,li {
     color: #f4c748
 }
@@ -50,4 +74,19 @@ p,ul,li {
 @font-face {
     font-family: 'My Webfont';
     src: url('airstrikeplat.ttf') format('truetype')
+}
+
+
+@media (max-width: 890px) {
+    .body-text {
+        margin: 0px 30px;
+        padding-bottom: 30px;
+    }
+}
+
+@media (max-width: 500px) {
+    .body-text {
+        margin: 0px 30px;
+        padding-bottom: 30px;
+    }
 }

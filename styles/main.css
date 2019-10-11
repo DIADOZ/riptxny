@@ -9,7 +9,6 @@
 body {
   margin: 0px;
   color: var(--sandy-yellow);
-  text-align: center;
   background-color: var(--slate-gray);
 
   font-size: 17px;
@@ -19,7 +18,7 @@ body {
 a.nav {
   position: fixed;
   color: inherit;
-  z-index: 1;
+  z-index: 2;
   text-decoration: none;
   text-transform: lowercase;
 
@@ -36,7 +35,7 @@ a.nav:hover {
 
 #logo {
   opacity: 0;
-  margin: 10px 0px;
+  margin: 5px 0px;
   width: 2.5em;
 }
 
