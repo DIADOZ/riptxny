@@ -7,12 +7,38 @@
 }
 
 body {
-  margin: 0px;
-  color: var(--sandy-yellow);
-  background-color: var(--slate-gray);
+  height: 100%;
+  margin: 0;
+  
 
-  font-size: 17px;
+  background: linear-gradient(45deg, var(--peru-orange), var(--slate-green), var(--sienna-brown), var(--slate-gray));
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 600% 600%;
+
+  -webkit-animation: gradientMovement 15s infinite;
+  -moz-animation: gradientMovement 15s infinite;
+  animation: gradientMovement 15s infinite;
+
+  color: var(--sandy-yellow);
   font-family: "Space Mono", monospace;
+  font-size: 17px;
+}
+
+@-webkit-keyframes gradientMovement {
+  0%{background-position:0% 91%}
+  50%{background-position:100% 10%}
+  100%{background-position:0% 91%}
+}
+@-moz-keyframes gradientMovement {
+  0%{background-position:0% 91%}
+  50%{background-position:100% 10%}
+  100%{background-position:0% 91%}
+}
+@keyframes gradientMovement {
+  0%{background-position:0% 91%}
+  50%{background-position:100% 10%}
+  100%{background-position:0% 91%}
 }
 
 a.nav {
