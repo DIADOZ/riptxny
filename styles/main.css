@@ -9,16 +9,15 @@
 body {
   height: 100%;
   margin: 0;
-  
 
   background: linear-gradient(45deg, var(--peru-orange), var(--slate-green), var(--sienna-brown), var(--slate-gray));
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 600% 600%;
 
-  -webkit-animation: gradientMovement 15s infinite;
-  -moz-animation: gradientMovement 15s infinite;
-  animation: gradientMovement 15s infinite;
+  -webkit-animation: gradientMovement 50s infinite;
+  -moz-animation: gradientMovement 50s infinite;
+  animation: gradientMovement 50s infinite;
 
   color: var(--sandy-yellow);
   font-family: "Space Mono", monospace;

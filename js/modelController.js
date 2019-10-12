@@ -11,7 +11,6 @@ function init() {
   container = document.querySelector("#scene-container");
 
   scene = new THREE.Scene();
-  scene.background = new THREE.Color("#F00");
 
   createCamera();
   createControls();
@@ -83,7 +82,9 @@ function loadModels() {
 
 function createRenderer() {
   // create a WebGLRenderer and set its width and height
-  renderer = new THREE.WebGLRenderer({ antialias: true });
+  renderer = new THREE.WebGLRenderer({ alpha: true });
+  renderer.setClearColor( new THREE.Color( 0xff0000 ) );
+  renderer.setClearAlpha( 0 );
   renderer.setSize(container.clientWidth, container.clientHeight);
 
   renderer.setPixelRatio(window.devicePixelRatio);
