@@ -4,19 +4,19 @@ body {
 h1 {
     font-family: 'My Webfont';
     color: #f4c748;
-    font-size:500%
+    font-size: 5em;
 }
 
 h2 {
     /* font-family: 'My Webfont'; */
     color: #f4c748;
-    font-size: 1.5em;
+    font-size: 1.3em;
 }
 
 
 p,ul,li {
     font-family: Noto Sans, sans-serif;
-    font-size: 21px;
+    font-size: 1em;
     line-height: 1.6;
 }
 
