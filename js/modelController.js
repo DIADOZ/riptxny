@@ -32,7 +32,7 @@ function createCamera() {
     1,
     1000
   );
-  camera.position.set(-1.5, 50, 500);
+  camera.position.set(.5, 3, -1);
 }
 
 function createControls() {
@@ -42,7 +42,7 @@ function createControls() {
   controls.enableZoom = false;
   controls.enableKeys = false;
   controls.enablePan = false;
-  controls.maxPolarAngle = 1.6;
+  // controls.maxPolarAngle = 1.6;
 }
 
 function createLights() {
@@ -71,9 +71,9 @@ function loadModels() {
   };
 
   // model is loaded asynchronously,
-  const atlasPosition = new THREE.Vector3(0, -25, 0);
+  const atlasPosition = new THREE.Vector3(0, 0, 0);
   loader.load(
-    "/models/Atlas_EditedPlane.glb",
+    "/models/CDCase_CDCOVERV.glb",
     gltf => onLoad(gltf, atlasPosition),
     onProgress,
     onError
