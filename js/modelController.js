@@ -3,6 +3,8 @@ let camera;
 let controls;
 let renderer;
 let scene;
+let model;
+let topLight, bottomLight;
 
 const mixers = [];
 const clock = new THREE.Clock();
@@ -13,9 +15,9 @@ function init() {
   scene = new THREE.Scene();
 
   createCamera();
-  createControls();
   createLights();
   loadModels();
+  createControls();
   createRenderer();
 
   renderer.setAnimationLoop(() => {
@@ -27,31 +29,30 @@ function init() {
 
 function createCamera() {
   camera = new THREE.PerspectiveCamera(
-    10,
+    45,
     container.clientWidth / container.clientHeight,
-    1,
+    .1,
     1000
   );
-  camera.position.set(.5, 3, -1);
-}
-
-function createControls() {
-  controls = new THREE.OrbitControls(camera, container);
-  controls.autoRotate = true;
-  controls.autoRotateSpeed = 0.7;
-  controls.enableZoom = false;
-  controls.enableKeys = false;
-  controls.enablePan = false;
-  // controls.maxPolarAngle = 1.6;
+  camera.position.x = -2;
+  camera.position.y = 1.8;
+  camera.position.z = 0;
 }
 
 function createLights() {
-  const ambientLight = new THREE.HemisphereLight(0xddeeff, 0x0f0e0d, 5);
+  var sphere = new THREE.SphereBufferGeometry(.1, 8, 8 );
 
-  const mainLight = new THREE.DirectionalLight(0xffffff, 5);
-  mainLight.position.set(10, 10, 10);
+  const ambientLight = new THREE.HemisphereLight(0xfffff0, 5);
 
-  scene.add(ambientLight, mainLight);
+  topLight = new THREE.PointLight(0x0040ff, 5, 100, 2);
+  topLight.add(new THREE.Mesh(sphere, new THREE.MeshBasicMaterial({color: 0x0040ff})));
+  topLight.castShadow = true;
+
+  bottomLight = new THREE.PointLight(0x0040ff, 1, 100, 2);
+  bottomLight.add(new THREE.Mesh(sphere, new THREE.MeshBasicMaterial({color: 0x0040ff})));
+  topLight.castShadow = true;
+
+  scene.add(ambientLight, topLight, bottomLight);
 }
 
 function loadModels() {
@@ -59,8 +60,9 @@ function loadModels() {
 
   // A reusable function to set up the models. Position parameter to move model
   const onLoad = (gltf, position) => {
-    const model = gltf.scene.children[0];
+    model = gltf.scene.children[0];
     model.position.copy(position);
+    model.castShadow = true;
 
     scene.add(model);
   };
@@ -80,6 +82,16 @@ function loadModels() {
   );
 }
 
+function createControls() {
+  controls = new THREE.OrbitControls(camera, container);
+  controls.autoRotate = true;
+  controls.autoRotateSpeed = 0.7;
+  // controls.enableZoom = false;
+  controls.enableKeys = false;
+  controls.enablePan = false;
+  // controls.maxPolarAngle = 1.6;
+}
+
 function createRenderer() {
   // create a WebGLRenderer and set its width and height
   renderer = new THREE.WebGLRenderer({ alpha: true });
@@ -92,13 +104,20 @@ function createRenderer() {
   renderer.gammaFactor = 2.2;
   renderer.gammaOutput = true;
 
-  renderer.physicallyCorrectLights = true;
-
   container.appendChild(renderer.domElement);
 }
 
 function update() {
   const delta = clock.getDelta();
+  var time = Date.now() * 0.0005;
+  
+  topLight.position.x = (Math.sin( time * 0.7 ) * 20)/100;
+  topLight.position.y = 1;
+  topLight.position.z = (Math.cos( time * 0.3 ) * 30)/100;
+
+  bottomLight.position.x = (Math.sin( time * 0.7 ) * 20)/100;
+  bottomLight.position.y = -1;
+  bottomLight.position.z = (Math.cos(  time * 0.3 ) * 30)/100;
 
   for (const mixer of mixers) {
     mixer.update(delta);
