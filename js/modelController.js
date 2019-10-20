@@ -40,16 +40,13 @@ function createCamera() {
 }
 
 function createLights() {
-  var sphere = new THREE.SphereBufferGeometry(.1, 8, 8 );
 
   const ambientLight = new THREE.HemisphereLight(0xfffff0, 5);
 
   topLight = new THREE.PointLight(0x0040ff, 5, 100, 2);
-  topLight.add(new THREE.Mesh(sphere, new THREE.MeshBasicMaterial({color: 0x0040ff})));
   topLight.castShadow = true;
 
   bottomLight = new THREE.PointLight(0x0040ff, 1, 100, 2);
-  bottomLight.add(new THREE.Mesh(sphere, new THREE.MeshBasicMaterial({color: 0x0040ff})));
   topLight.castShadow = true;
 
   scene.add(ambientLight, topLight, bottomLight);
@@ -86,7 +83,7 @@ function createControls() {
   controls = new THREE.OrbitControls(camera, container);
   controls.autoRotate = true;
   controls.autoRotateSpeed = 0.7;
-  // controls.enableZoom = false;
+  controls.enableZoom = false;
   controls.enableKeys = false;
   controls.enablePan = false;
   // controls.maxPolarAngle = 1.6;
@@ -116,7 +113,7 @@ function update() {
   topLight.position.z = (Math.cos( time * 0.3 ) * 30)/100;
 
   bottomLight.position.x = (Math.sin( time * 0.7 ) * 20)/100;
-  bottomLight.position.y = -1;
+  bottomLight.position.y = -0.5;
   bottomLight.position.z = (Math.cos(  time * 0.3 ) * 30)/100;
 
   for (const mixer of mixers) {
