@@ -1,16 +1,20 @@
-$(window).on("load",function() {
-    $(window).scroll(function() {
+$(window).on("load", function() {
+  $(window)
+    .scroll(function() {
       var windowBottom = $(this).scrollTop() + $(this).innerHeight();
-      $(".fade").each(function() {
+      $(".body-section").each(function() {
         /* Check the location of each desired element */
         var objectBottom = $(this).offset().top + $(this).outerHeight();
-        
+
         /* If the element is completely within bounds of the window, fade it in */
-        if (objectBottom < windowBottom) { //object comes into view (scrolling down)
-          if ($(this).css("opacity")==0) {$(this).fadeTo(600,1);}
-        } else { //object goes out of view (scrolling up)
-          if ($(this).css("opacity")==1) {$(this).fadeTo(600,0);}
+        if (objectBottom < windowBottom) {
+          //object comes into view (scrolling down)
+          $(this).addClass("fade");
         }
+        // else { //object goes out of view (scrolling up)
+        //   if ($(this).css("opacity")==1) {$(this).fadeTo(600,0);}
+        // }
       });
-    }).scroll(); //invoke scroll-handler on page-load
-  });
+    })
+    .scroll(); //invoke scroll-handler on page-load
+});

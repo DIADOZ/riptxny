@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <head>                                            
+  <head>
     <title>RIP TXNY</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -10,12 +10,7 @@
       href="https://fonts.googleapis.com/css?family=Space+Mono&display=swap"
       rel="stylesheet"
     /> -->
-
     <link href="styles/main.css" rel="stylesheet" type="text/css" />
-    <script src="js/vendor/three/three.js"></script>
-    <script src="js/vendor/three/OrbitControls.js"></script>
-    <script src="js/vendor/three/GLTFLoader.js"></script>
-
     <link
       rel="icon"
       type="image/png"
@@ -59,14 +54,20 @@
     <a class="nav top-right" href="bio.html">BIO</a>
     <a class="nav bottom-left" href="socials.html">SOCIALS</a>
     <a class="nav bottom-right" href="email.html">Subscribe</a>
+
+    <!-- Background Video -->
     <div class="home-video">
-        <video class="actual-video" playsinline="" loop="" autoplay="" preload="" >
-            <source src="./assets/Broll.mp4" type="video/mp4">
-          </video>
+      <video class="actual-video" playsinline="" loop="" autoplay="" preload="">
+        <source src="./assets/Broll.mp4" type="video/mp4" />
+      </video>
     </div>
-    <!-- 3D Model Displayed Here -->
+
+    <!-- 3D Model -->
     <div id="scene-container"></div>
 
+    <script src="js/vendor/three/three.js"></script>
+    <script src="js/vendor/three/OrbitControls.js"></script>
+    <script src="js/vendor/three/GLTFLoader.js"></script>
     <script src="js/init.js"></script>
     <script src="js/modelController.js"></script>
   </body>
