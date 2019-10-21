@@ -43,7 +43,7 @@ iframe#txny-youtube {
 }
 
 .fade {
-  animation: 1.5s showIn 0.25s linear forwards;
+  animation: 1.25s showIn 0.25s ease-in forwards;
 }
 
 /* .body:before {
