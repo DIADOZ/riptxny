@@ -15,9 +15,9 @@ body {
   background-attachment: fixed;
   background-size: 600% 600%;
 
-  -webkit-animation: gradientMovement 50s infinite;
-  -moz-animation: gradientMovement 50s infinite;
-  animation: gradientMovement 50s infinite;
+  -webkit-animation: gradientMovement linear 80s infinite;
+  -moz-animation: gradientMovement linear 80s infinite;
+  animation: gradientMovement linear 80s infinite;
 
   color: var(--sandy-yellow);
   font-family: "Space Mono", monospace;
@@ -55,7 +55,7 @@ a.nav {
 }
 
 a.nav:hover {
-  color: var(--slate-green);
+  color: var(--peru-orange);
 }
 
 #logo {
@@ -69,7 +69,7 @@ a.nav:hover {
 }
 
 #logo > svg:hover {
-  fill: var(--slate-green);
+  fill: var(--peru-orange);
 }
 
 .top-center {

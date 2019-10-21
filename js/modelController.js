@@ -43,10 +43,10 @@ function createLights() {
 
   const ambientLight = new THREE.HemisphereLight(0xfffff0, 5);
 
-  topLight = new THREE.PointLight(0x0040ff, 5, 100, 2);
+  topLight = new THREE.PointLight(0xcd712c, 5, 100, 2);
   topLight.castShadow = true;
 
-  bottomLight = new THREE.PointLight(0x0040ff, 1, 100, 2);
+  bottomLight = new THREE.PointLight(0xcd712c, 1, 100, 2);
   topLight.castShadow = true;
 
   scene.add(ambientLight, topLight, bottomLight);
