@@ -82,7 +82,7 @@ function loadModels() {
 function createControls() {
   controls = new THREE.OrbitControls(camera, container);
   controls.autoRotate = true;
-  controls.autoRotateSpeed = 0.7;
+  controls.autoRotateSpeed = 2;
   controls.enableZoom = false;
   controls.enableKeys = false;
   controls.enablePan = false;
