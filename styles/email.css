@@ -1,5 +1,4 @@
 .email-container {
-  margin: 0 auto;
   /* background-color: bisque; */
   /* this is to center hor. and vert. */
   position: absolute;
@@ -12,12 +11,12 @@
 
 @media (max-width: 890px) {
   .email-container {
-    width: 80vw;
+    width: 70vw;
   }
 }
 
 @media (max-width: 500px) {
   .email-container {
-    width: 80vw;
+    width: 70vw;
   }
 }
