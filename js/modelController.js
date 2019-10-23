@@ -45,9 +45,12 @@ function createLights() {
 
   topLight = new THREE.PointLight(0xcd712c, 5, 100, 2);
   topLight.castShadow = true;
+  topLight.position.x = 0;
+  topLight.position.y = 1;
+  topLight.position.z = 0;
 
   bottomLight = new THREE.PointLight(0xcd712c, 1, 100, 2);
-  topLight.castShadow = true;
+  bottomLight.castShadow = true;
 
   scene.add(ambientLight, topLight, bottomLight);
 }
@@ -72,7 +75,7 @@ function loadModels() {
   // model is loaded asynchronously,
   const atlasPosition = new THREE.Vector3(0, 0, 0);
   loader.load(
-    "/models/CDCase_CDCOVERV.glb",
+    "./models/CDCase_CDCOVERV.glb",
     gltf => onLoad(gltf, atlasPosition),
     onProgress,
     onError
@@ -107,10 +110,6 @@ function createRenderer() {
 function update() {
   const delta = clock.getDelta();
   var time = Date.now() * 0.0005;
-  
-  topLight.position.x = (Math.sin( time * 0.7 ) * 20)/100;
-  topLight.position.y = 1;
-  topLight.position.z = (Math.cos( time * 0.3 ) * 30)/100;
 
   bottomLight.position.x = (Math.sin( time * 0.7 ) * 20)/100;
   bottomLight.position.y = -0.5;
