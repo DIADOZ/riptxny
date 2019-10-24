@@ -74,7 +74,7 @@ function loadModels() {
   // model is loaded asynchronously,
   const atlasPosition = new THREE.Vector3(0, 0, 0);
   loader.load(
-    "./models/CDCase_CDCOVERV.glb",
+    "../models/cd-case-model.glb",
     gltf => onLoad(gltf, atlasPosition),
     onProgress,
     onError
