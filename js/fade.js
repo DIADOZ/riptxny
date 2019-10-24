@@ -7,7 +7,7 @@ $(window).on("load", function() {
         var objectTop = $(this).offset().top;
 
         /* If the element's top is inside the viewport (plus 150px for padding) then fade it in */
-        if (objectTop < (windowBottom - 150)) {
+        if (objectTop < windowBottom - 120) {
           //object comes into view (scrolling down)
           $(this).addClass("fade");
         }

@@ -10,7 +10,13 @@ body {
   height: 100%;
   margin: 0;
 
-  background: linear-gradient(45deg, var(--peru-orange), var(--slate-green), var(--sienna-brown), var(--slate-gray));
+  background: linear-gradient(
+    45deg,
+    var(--peru-orange),
+    var(--slate-green),
+    var(--sienna-brown),
+    var(--slate-gray)
+  );
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 600% 600%;
@@ -25,19 +31,37 @@ body {
 }
 
 @-webkit-keyframes gradientMovement {
-  0%{background-position:0% 91%}
-  50%{background-position:100% 10%}
-  100%{background-position:0% 91%}
+  0% {
+    background-position: 0% 91%;
+  }
+  50% {
+    background-position: 100% 10%;
+  }
+  100% {
+    background-position: 0% 91%;
+  }
 }
 @-moz-keyframes gradientMovement {
-  0%{background-position:0% 91%}
-  50%{background-position:100% 10%}
-  100%{background-position:0% 91%}
+  0% {
+    background-position: 0% 91%;
+  }
+  50% {
+    background-position: 100% 10%;
+  }
+  100% {
+    background-position: 0% 91%;
+  }
 }
 @keyframes gradientMovement {
-  0%{background-position:0% 91%}
-  50%{background-position:100% 10%}
-  100%{background-position:0% 91%}
+  0% {
+    background-position: 0% 91%;
+  }
+  50% {
+    background-position: 100% 10%;
+  }
+  100% {
+    background-position: 0% 91%;
+  }
 }
 
 a.nav {
@@ -137,7 +161,10 @@ a.nav:hover {
 
 @media (max-width: 500px) {
   a.nav {
-    margin: 11px 12px;
+    margin: 5px;
+  }
+  #logo {
+    margin: 2px 0px;
   }
 }
 
@@ -149,21 +176,21 @@ a.nav:hover {
   overflow: hidden;
 }
 /* main page specific */
-.home-video{
+.home-video {
   position: fixed;
-top: 0;
-right: 0;
-bottom: 0;
-left: 0;  
-width:100%;
-height:100%;
-background-color: black;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
 }
 
 /* music page specific */
-.actual-video{
-  width:100%;
-   height:100%;
-   object-fit: cover !important;
+.actual-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover !important;
 }
 /* music page specific */

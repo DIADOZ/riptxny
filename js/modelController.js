@@ -31,7 +31,7 @@ function createCamera() {
   camera = new THREE.PerspectiveCamera(
     45,
     container.clientWidth / container.clientHeight,
-    .1,
+    0.1,
     1000
   );
   camera.position.x = -2;
@@ -40,7 +40,6 @@ function createCamera() {
 }
 
 function createLights() {
-
   const ambientLight = new THREE.HemisphereLight(0xfffff0, 5);
 
   topLight = new THREE.PointLight(0xcd712c, 5, 100, 2);
@@ -95,8 +94,8 @@ function createControls() {
 function createRenderer() {
   // create a WebGLRenderer and set its width and height
   renderer = new THREE.WebGLRenderer({ alpha: true });
-  renderer.setClearColor( new THREE.Color( 0xff0000 ) );
-  renderer.setClearAlpha( 0 );
+  renderer.setClearColor(new THREE.Color(0xff0000));
+  renderer.setClearAlpha(0);
   renderer.setSize(container.clientWidth, container.clientHeight);
 
   renderer.setPixelRatio(window.devicePixelRatio);
@@ -111,9 +110,9 @@ function update() {
   const delta = clock.getDelta();
   var time = Date.now() * 0.0005;
 
-  bottomLight.position.x = (Math.sin( time * 0.7 ) * 20)/100;
+  bottomLight.position.x = (Math.sin(time * 0.7) * 20) / 100;
   bottomLight.position.y = -0.5;
-  bottomLight.position.z = (Math.cos(  time * 0.3 ) * 30)/100;
+  bottomLight.position.z = (Math.cos(time * 0.3) * 30) / 100;
 
   for (const mixer of mixers) {
     mixer.update(delta);
