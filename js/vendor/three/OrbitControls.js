@@ -14,6 +14,80 @@
 //    Pan - right mouse, or left mouse + ctrl/meta/shiftKey, or arrow keys / touch: two-finger move
 
 THREE.OrbitControls = function ( object, domElement ) {
+	var setObjectQuaternion = function () {
+ 
+		var zee = new THREE.Vector3( 0, 0, 1 );
+	 
+		var euler = new THREE.Euler();
+	 
+		var q0 = new THREE.Quaternion();
+	 
+		var q1 = new THREE.Quaternion(  - Math.sqrt( 0.5 ), 0, 0,  Math.sqrt( 0.5 ) );
+	 
+		return function ( quaternion, alpha, beta, gamma, orient ) {
+	 
+			euler.set( beta, alpha, - gamma, 'YXZ' );
+	 
+			quaternion.setFromEuler( euler );
+	 
+			quaternion.multiply( q1 );
+	 
+			quaternion.multiply( q0.setFromAxisAngle( zee, - orient ) );
+	 
+		}
+	 
+	}();
+
+	function Quat2Angle( x, y, z, w ) {
+ 
+		var pitch, roll, yaw;
+	 
+		var test = x * y + z * w;
+	 
+		if (test > 0.499) {
+			yaw = 2 * Math.atan2(x, w);
+			pitch = Math.PI / 2;
+			roll = 0;
+	 
+			var euler = new THREE.Vector3( pitch, roll, yaw);
+			return euler;
+		}
+	 
+		if (test < -0.499) {
+			yaw = -2 * Math.atan2(x, w);
+			pitch = -Math.PI / 2;
+			roll = 0;
+			var euler = new THREE.Vector3( pitch, roll, yaw);
+			return euler;
+		}
+	 
+		var sqx = x * x;
+		var sqy = y * y;
+		var sqz = z * z;
+		yaw = Math.atan2(2 * y * w - 2 * x * z, 1 - 2 * sqy - 2 * sqz);
+		pitch = Math.asin(2 * test);
+		roll = Math.atan2(2 * x * w - 2 * y * z, 1 - 2 * sqx - 2 * sqz);
+	 
+		var euler = new THREE.Vector3( pitch, roll, yaw);
+	 
+		return euler;
+	}
+
+	function onDeviceOrientationChangeEvent( event ) {
+ 
+		scope.deviceOrientation = event;
+	 
+	}
+	 
+	function onScreenOrientationChangeEvent( event ) {
+	 
+		scope.screenOrientation = window.orientation || 0;
+	 
+	}
+	 
+	window.addEventListener( 'deviceorientation', onDeviceOrientationChangeEvent, false );
+	window.addEventListener( 'orientationchange', onScreenOrientationChangeEvent, false );
+	
 
 	this.object = object;
 
@@ -133,6 +207,9 @@ THREE.OrbitControls = function ( object, domElement ) {
 		var lastPosition = new THREE.Vector3();
 		var lastQuaternion = new THREE.Quaternion();
 
+		var lastGamma = 0,
+    	lastBeta = 0;
+
 		return function update() {
 
 			var position = scope.object.position;
@@ -214,6 +291,28 @@ THREE.OrbitControls = function ( object, domElement ) {
 				return true;
 
 			}
+
+			// Gyroscope Additions
+			if ('undefined' === typeof scope.deviceOrientation) {
+				return false;
+			}
+			
+			var alpha = scope.deviceOrientation.alpha ? THREE.Math.degToRad(scope.deviceOrientation.alpha) : 0;
+			var beta = scope.deviceOrientation.beta ? THREE.Math.degToRad(scope.deviceOrientation.beta) : 0;
+			var gamma = scope.deviceOrientation.gamma ? THREE.Math.degToRad(scope.deviceOrientation.gamma) : 0;
+			var orient = scope.screenOrientation ? THREE.Math.degToRad(scope.screenOrientation) : 0;
+			
+			var currentQ = new THREE.Quaternion().copy(scope.object.quaternion);
+			
+			setObjectQuaternion(currentQ, alpha, beta, gamma, orient);
+			var currentAngle = Quat2Angle(currentQ.x, currentQ.y, currentQ.z, currentQ.w);
+			var radDeg = 180 / Math.PI;
+			
+			rotateLeft(lastGamma - currentAngle.z);
+			lastGamma = currentAngle.z;
+			
+			rotateUp(lastBeta - currentAngle.y);
+			lastBeta = currentAngle.y;
 
 			return false;
 
