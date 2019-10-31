@@ -3,42 +3,65 @@
   height: 100%;
 }
 
-.email-container {
-  /* background-color: bisque; */
+#mc_embed_signup {
   /* this is to center hor. and vert. */
   margin: auto;
-  width: 40vw;
+  clear: left;
 }
 
-h2 {
-  padding: 0 !important;
-  margin: 0 !important; 
+#mc_embed_signup input.email {
+  border-width: 0 0 3px;
+  border-color: #f4c748;
+  background: #00000026;
+
+  color: #f4c748;
+
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  box-shadow: none !important;
+
+  width: 60%;
+
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-label {
-  font-size: .5em;
+#mc_embed_signup input.email:focus {
+  width: 100%;
 }
 
-
-
-@media (max-width: 890px) {
-  .email-container {
-    width: 70vw;
-  }
+#mc_embed_signup .floating-label {
+  position: absolute;
+  pointer-events: none;
+  top: 20px;
+  left: 10px;
+  width: 150px;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  font-size: 15px;
 }
 
-@media (min-width: 667px) {
-  .mc-field-group {
-    padding-bottom: 5px !important;
-    min-height: auto !important;
-  }
-  
-  #mce-EMAIL {
-    width: 433px !important;
-  }
-  
-  #mce-FNAME, #mce-LNAME {
-    display: inline-block !important;
-    width: 210px !important;
-  }
+#mc_embed_signup input:focus ~ .floating-label,
+#mc_embed_signup input:not(:focus):valid ~ .floating-label {
+  top: -2px;
+  left: 5px;
+  font-size: 10px;
+  opacity: 1;
+}
+
+#mc_embed_signup input.button {
+  background-color: #f4c748;
+  color: #131d1c;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+#mc_embed_signup input.button:hover {
+  background-color: #f4c748;
+  color: #131d1c;
+  box-shadow: 0px 1px 5px 2px rgba(0, 0, 0, 0.2);
+}
+
+#mc_embed_signup input.button:active {
+  background-color: #131d1c;
+  color: #f4c748;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.2);
 }
