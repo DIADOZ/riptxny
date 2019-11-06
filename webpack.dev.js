@@ -5,6 +5,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
+  mode: 'development',
   entry: { 
     index: './src/page-index/index.js',
     bio: './src/page-bio/bio.js',
@@ -13,7 +14,7 @@ module.exports = {
     email: './src/page-email/email.js'
   },
   output: {
-    filename: '[name].js',
+    filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist')
   },
   resolve: {
@@ -34,10 +35,10 @@ module.exports = {
         }
       },
       {
-        test:  /\.css$/i,
+        test:  /\.css$/,
         use: [
-          MiniCssExtractPlugin.loader,
-          'css-loader',
+          'style-loader',
+          'css-loader'
         ]
       }
     ]
