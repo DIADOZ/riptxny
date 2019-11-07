@@ -64,7 +64,8 @@ module.exports = {
       new HtmlWebpackPlugin({
           template: './src/page-index/index.html',
           inject: true,
-          filename: 'index.[hash].html',
+          hash: true,
+          filename: 'index.html',
           chunks: ['index'],
           meta: {
             charset: 'utf-8',
@@ -91,7 +92,8 @@ module.exports = {
           template: './src/page-ep/ep.html',
           inject: true,
           chunks: ['ep'],
-          filename: 'ep.[hash].html',
+          hash: true,
+          filename: 'ep.html',
           meta: {
             charset: 'utf-8',
             viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no',
@@ -117,7 +119,8 @@ module.exports = {
           template: './src/page-bio/bio.html',
           inject: true,
           chunks: ['bio'],
-          filename: 'bio.[hash].html',
+          hash: true,
+          filename: 'bio.html',
           meta: {
             charset: 'utf-8',
             viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no',
@@ -143,7 +146,8 @@ module.exports = {
           template: './src/page-socials/socials.html',
           inject: true,
           chunks: ['socials'],
-          filename: 'socials.[hash].html',
+          hash: true,
+          filename: 'socials.html',
           meta: {
             charset: 'utf-8',
             viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no',
@@ -169,7 +173,8 @@ module.exports = {
           template: './src/page-email/email.html',
           inject: true,
           chunks: ['email'],
-          filename: 'email.[hash].html',
+          hash: true,
+          filename: 'email.html',
           meta: {
             charset: 'utf-8',
             viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no',
