@@ -16,6 +16,8 @@ li {
   font-size: 1em;
   line-height: 1.6;
   color: #f4c748;
+  text-align: justify;
+  letter-spacing: 1px;
 }
 
 h1.title-center {
