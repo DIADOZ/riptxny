@@ -7,6 +7,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const TerserJSPlugin = require('terser-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
 const buildPath = path.resolve(__dirname, 'dist');
 
 module.exports = {
@@ -74,10 +75,11 @@ module.exports = {
             'twitter:card': 'summary',
             'twitter:site': '@riptxny',
             'twitter:creator': '@diadozofficial',
-            'og:title': 'RIPTXNY',
-            'og:url': 'riptxny.com',
-            'og:image': './src/assets/photos/optimized/rip-txny-cover-1-500.jpg',
-            'og:description': 'Official website of RIP TXNY. EP out now on all streaming services.',
+            'og:title': { 'property': 'og:title', 'content': 'RIPTXNY'},
+            'og:url': { 'property': 'og:url', 'content': 'http://www.riptxny.com/'},
+            'og:image': { 'property': 'og:image', 'content': 'http://www.riptxny.com/assets/photos/optimized/rip-txny-cover-1-500.jpg'},
+            'og:description': { 'property': 'og:description', 'content': 'Official website of RIP TXNY. EP out now on all streaming services.'},
+            'og:type': { 'property': 'og:type', 'content': 'website'}
           },
           minify: {
             collapseWhitespace: true,
@@ -101,10 +103,11 @@ module.exports = {
             'twitter:card': 'summary',
             'twitter:site': '@riptxny',
             'twitter:creator': '@diadozofficial',
-            'og:title': 'RIPTXNY',
-            'og:url': 'riptxny.com/ep.html',
-            'og:image': './src/assets/photos/optimized/rip-txny-cover-1-500.jpg',
-            'og:description': 'Official website of RIP TXNY. EP out now on all streaming services.',
+            'og:title': { 'property': 'og:title', 'content': 'RIPTXNY | EP'},
+            'og:url': { 'property': 'og:url', 'content': 'http://www.riptxny.com/ep.html'},
+            'og:image': { 'property': 'og:image', 'content': 'http://www.riptxny.com/assets/photos/optimized/rip-txny-cover-1-500.jpg'},
+            'og:description': { 'property': 'og:description', 'content': 'Official website of RIP TXNY. EP out now on all streaming services.'},
+            'og:type': { 'property': 'og:type', 'content': 'website'}
           },
           minify: {
             collapseWhitespace: true,
@@ -128,10 +131,11 @@ module.exports = {
             'twitter:card': 'summary',
             'twitter:site': '@riptxny',
             'twitter:creator': '@diadozofficial',
-            'og:title': 'RIPTXNY',
-            'og:url': 'riptxny.com/bio.html',
-            'og:image': './src/assets/photos/optimized/rip-txny-cover-1-500.jpg',
-            'og:description': 'Official website of RIP TXNY. EP out now on all streaming services.',
+            'og:title': { 'property': 'og:title', 'content': 'RIPTXNY | Bio'},
+            'og:url': { 'property': 'og:url', 'content': 'http://www.riptxny.com/bio.html'},
+            'og:image': { 'property': 'og:image', 'content': 'http://www.riptxny.com/assets/photos/optimized/rip-txny-cover-1-500.jpg'},
+            'og:description': { 'property': 'og:description', 'content': 'Official website of RIP TXNY. EP out now on all streaming services.'},
+            'og:type': { 'property': 'og:type', 'content': 'website'}
           },
           minify: {
             collapseWhitespace: true,
@@ -155,10 +159,11 @@ module.exports = {
             'twitter:card': 'summary',
             'twitter:site': '@riptxny',
             'twitter:creator': '@diadozofficial',
-            'og:title': 'RIPTXNY',
-            'og:url': 'riptxny.com/socials.html',
-            'og:image': './src/assets/photos/optimized/rip-txny-cover-1-500.jpg',
-            'og:description': 'Official website of RIP TXNY. EP out now on all streaming services.',
+            'og:title': { 'property': 'og:title', 'content': 'RIPTXNY | Socials'},
+            'og:url': { 'property': 'og:url', 'content': 'http://www.riptxny.com/socials.html'},
+            'og:image': { 'property': 'og:image', 'content': 'http://www.riptxny.com/assets/photos/optimized/rip-txny-cover-1-500.jpg'},
+            'og:description': { 'property': 'og:description', 'content': 'Official website of RIP TXNY. EP out now on all streaming services.'},
+            'og:type': { 'property': 'og:type', 'content': 'website'}
           },
           minify: {
             collapseWhitespace: true,
@@ -182,10 +187,11 @@ module.exports = {
             'twitter:card': 'summary',
             'twitter:site': '@riptxny',
             'twitter:creator': '@diadozofficial',
-            'og:title': 'RIPTXNY',
-            'og:url': 'riptxny.com/email.html',
-            'og:image': './src/assets/photos/optimized/rip-txny-cover-1-500.jpg',
-            'og:description': 'Official website of RIP TXNY. EP out now on all streaming services.',
+            'og:title': { 'property': 'og:title', 'content': 'RIPTXNY | Subscribe'},
+            'og:url': { 'property': 'og:url', 'content': 'http://www.riptxny.com/email.html'},
+            'og:image': { 'property': 'og:image', 'content': 'http://www.riptxny.com/assets/photos/optimized/rip-txny-cover-1-500.jpg'},
+            'og:description': { 'property': 'og:description', 'content': 'Official website of RIP TXNY. EP out now on all streaming services.'},
+            'og:type': { 'property': 'og:type', 'content': 'website'}
           },
           minify: {
             collapseWhitespace: true,
@@ -207,7 +213,8 @@ module.exports = {
         new webpack.ProvidePlugin({
           $: 'jquery',
           jQuery: 'jquery'
-        })
+        }),
+        new CompressionPlugin()
   ],
   optimization: {
       minimizer: [
