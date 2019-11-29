@@ -214,7 +214,7 @@ module.exports = {
           $: 'jquery',
           jQuery: 'jquery'
         }),
-        new CompressionPlugin()
+        // new CompressionPlugin()
   ],
   optimization: {
       minimizer: [

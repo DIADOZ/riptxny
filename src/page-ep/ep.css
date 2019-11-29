@@ -1,34 +1,15 @@
 .cover-container {
-  position: absolute;
-  top: 20%;
-  left: 50%;
-  transform: translate(-50%);
+  display: grid;
+  height: 100%;
+}
+
+.cover-container > a {
+  display: flex;
+  margin: auto;
 }
 
 .cover {
-  height: 30vh;
-}
-
-@media (max-width: 890px) {
-  .cover-container {
-    top: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-  .cover {
-    height: 40vh;
-  }
-}
-
-@media (max-width: 500px) {
-  .cover-container {
-    top: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-  .cover {
-    height: 40vh;
-  }
+  height: 40vh;
 }
 
 @media (orientation: landscape) {
