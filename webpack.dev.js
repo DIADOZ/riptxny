@@ -18,8 +18,11 @@ module.exports = {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist')
   },
-  resolve: {
-    extensions: ['.js', '.ts']
+  optimization: {
+    runtimeChunk: 'single',
+  },
+  devServer: {
+    static: './dist',
   },
   module: {
     rules: [
@@ -82,10 +85,12 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: '[name].css'
     }),
-    new CopyWebpackPlugin([{
-      from:'./src/assets',
-      to:'assets'
-    }]),
+    new CopyWebpackPlugin({
+      patterns: [{
+        from: './src/assets',
+        to: 'assets'
+      }]
+    }),
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery'
